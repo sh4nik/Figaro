@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         ConfigurationReader config = new ConfigurationReader();
-        FileUpdater updater = new FileUpdater("qa");
+        FileUpdater updater = new FileUpdater("prod");
 
         ArrayList<HashMap> files = config.getFiles();
         files.forEach((file) -> {

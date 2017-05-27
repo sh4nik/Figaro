@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
-import java.util.logging.Level;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +28,7 @@ public class ConfigurationReader {
         try {
             config = mapper.readValue(configFile,
                     new TypeReference<Map<String, Object>>() {
-                    });
+            });
         } catch (IOException ex) {
             LOGGER.error("Failed to load configurations!", ex);
             return;

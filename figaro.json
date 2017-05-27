@@ -4,19 +4,19 @@
       "path": "dummy_app/scheduler/db.properties",
       "configs": {
         "db.host": {
-          "dev": "devsvr",
-          "qa": "qasvr",
-          "prod": "prodsvr"
+          "dev": "db.host=devsvr",
+          "qa": "db.host=qasvr",
+          "prod": "db.host=prodsvr"
         },
         "db.user": {
-          "dev": "userx",
-          "qa": "usery",
-          "prod": "userz"
+          "dev": "db.user=userx",
+          "qa": "db.user=usery",
+          "prod": "db.user=userz"
         },
         "db.pass": {
-          "dev": "1234",
-          "qa": "2345",
-          "prod": "3456"
+          "dev": "db.pass=1234",
+          "qa": "db.pass=2345",
+          "prod": "db.pass=3456"
         }
       }
     },
@@ -24,19 +24,19 @@
       "path": "dummy_app/web_component/db.properties",
       "configs": {
         "db.host": {
-          "dev": "devsvr",
-          "qa": "qasvr",
-          "prod": "prodsvr"
+          "dev": "db.host=devsvr",
+          "qa": "db.host=qasvr",
+          "prod": "db.host=prodsvr"
         },
         "db.user": {
-          "dev": "userx",
-          "qa": "usery",
-          "prod": "userz"
+          "dev": "db.user=userx",
+          "qa": "db.user=usery",
+          "prod": "db.user=userz"
         },
         "db.pass": {
-          "dev": "1234",
-          "qa": "2345",
-          "prod": "3456"
+          "dev": "db.pass=1234",
+          "qa": "db.pass=2345",
+          "prod": "db.pass=3456"
         }
       }
     },

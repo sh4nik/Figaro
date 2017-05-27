@@ -3,7 +3,6 @@ package com.virtusa.gto.figaro;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import org.apache.commons.io.FileUtils;
@@ -51,7 +50,6 @@ public class FileUpdater {
                 String fullToken = APP_TOKEN + token;
                 if (existingLine.trim().startsWith(APP_TOKEN) && existingLine.trim().equals(fullToken)) {
                     tokenFound = true;
-                    LOGGER.info("Replacing token: " + fullToken);
                     String replacementString;
                     Object replacement = (Object) fileConfigs.get(token);
                     if (replacement instanceof String) {
@@ -64,6 +62,7 @@ public class FileUpdater {
                             break;
                         }
                     };
+                    LOGGER.info("Replacing token: " + fullToken + " [" + replacementString + "]");
                     processedLines.add(existingLine.substring(0, existingLine.indexOf(APP_TOKEN)) + replacementString);
                     fileChanged = true;
                     break;
