@@ -1,0 +1,50 @@
+{
+  "files": [
+    {
+      "path": "dummy_app/scheduler/db.properties",
+      "configs": {
+        "db.host": {
+          "dev": "devsvr",
+          "qa": "qasvr",
+          "prod": "prodsvr"
+        },
+        "db.user": {
+          "dev": "userx",
+          "qa": "usery",
+          "prod": "userz"
+        },
+        "db.pass": {
+          "dev": "1234",
+          "qa": "2345",
+          "prod": "3456"
+        }
+      }
+    },
+    {
+      "path": "dummy_app/web_component/db.properties",
+      "configs": {
+        "db.host": {
+          "dev": "devsvr",
+          "qa": "qasvr",
+          "prod": "prodsvr"
+        },
+        "db.user": {
+          "dev": "userx",
+          "qa": "usery",
+          "prod": "userz"
+        },
+        "db.pass": {
+          "dev": "1234",
+          "qa": "2345",
+          "prod": "3456"
+        }
+      }
+    },
+    {
+      "path": "dummy_app/web_component/conf/context.xml",
+      "configs": {
+        "xfilepath": "<entry path=\"myfolder/otherfolder/file.ext\">"
+      }
+    }
+  ]
+}

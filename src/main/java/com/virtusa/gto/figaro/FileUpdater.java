@@ -48,9 +48,8 @@ public class FileUpdater {
             boolean tokenFound = false;
             for (Object tokenObj : fileConfigs.keySet()) {
                 String token = (String) tokenObj;
-                existingLine = existingLine.trim();
                 String fullToken = APP_TOKEN + token;
-                if (existingLine.startsWith(APP_TOKEN) && existingLine.equals(fullToken)) {
+                if (existingLine.trim().startsWith(APP_TOKEN) && existingLine.trim().equals(fullToken)) {
                     tokenFound = true;
                     LOGGER.info("Replacing token: " + fullToken);
                     String replacementString;
@@ -64,9 +63,8 @@ public class FileUpdater {
                             LOGGER.info("Could not find replacement for specified environment!");
                             break;
                         }
-                    }
-                    List<String> replacementLines = Arrays.asList(replacementString.split(System.getProperty("line.separator")));
-                    processedLines.addAll(replacementLines);
+                    };
+                    processedLines.add(existingLine.substring(0, existingLine.indexOf(APP_TOKEN)) + replacementString);
                     fileChanged = true;
                     break;
                 }

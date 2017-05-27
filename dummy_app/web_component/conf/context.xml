@@ -1,0 +1,6 @@
+<sample-xml>
+	<context>
+		@@xfilepath
+		</entry>
+	</context>
+</sample-xml>
