@@ -5,19 +5,20 @@ import java.util.HashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Main {
+public class Figaro {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Figaro.class);
 
-    public static void main(String[] args) {
-
+    public static void execute(final String environment) {
+        LOGGER.info("Executing for environment [" + environment + "]");
         ConfigurationReader config = new ConfigurationReader();
-        FileUpdater updater = new FileUpdater("prod");
+        FileUpdater updater = new FileUpdater(environment);
 
         ArrayList<HashMap> files = config.getFiles();
         files.forEach((file) -> {
             updater.replaceTokens(file);
         });
+        
+        LOGGER.info("Execution complete!");
     }
-
 }
