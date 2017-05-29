@@ -15,10 +15,10 @@ public class Figaro {
         FileUpdater updater = new FileUpdater(environment);
 
         ArrayList<HashMap> files = config.getFiles();
-        files.forEach((file) -> {
+        for (HashMap file : files) {
             updater.replaceTokens(file);
-        });
-        
+        }
+
         LOGGER.info("Execution complete!");
     }
 }

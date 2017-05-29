@@ -43,13 +43,12 @@ public class FileUpdater {
 
         boolean fileChanged = false;
         for (String existingLine : existingLines) {
-            boolean tokenFound = false;
             for (Object tokenObj : fileConfigs.keySet()) {
                 String token = (String) tokenObj;
-                String fullToken = APP_TOKEN + token;
-                if (existingLine.trim().startsWith(APP_TOKEN) && existingLine.trim().equals(fullToken)) {
+                String fullToken = APP_TOKEN + "[" + token + "]";
+                int tokenIndex = existingLine.indexOf(fullToken);
+                if (tokenIndex != -1) {
                     LOGGER.info("Identified token: " + fullToken);
-                    tokenFound = true;
                     String replacementString;
                     Object replacement = (Object) fileConfigs.get(token);
                     if (replacement instanceof String) {
@@ -63,14 +62,12 @@ public class FileUpdater {
                         }
                     };
                     LOGGER.info("Replaced with: [" + replacementString + "]");
-                    processedLines.add(existingLine.substring(0, existingLine.indexOf(APP_TOKEN)) + replacementString);
+                    existingLine = existingLine.replace(fullToken, replacementString);
                     fileChanged = true;
                     break;
                 }
             }
-            if (!tokenFound) {
-                processedLines.add(existingLine);
-            }
+            processedLines.add(existingLine);
         }
 
         if (fileChanged) {
